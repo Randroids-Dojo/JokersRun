@@ -2,6 +2,8 @@
 
 A playable third-person arcade flight combat demo. Launch from a retreating carrier, complete flight and weapons checks, intercept three recon aircraft, fight their escorts, chase a scout through coastal cliffs and a bridge, engage a two-stage ace, then stop a final transmission before returning to the fleet.
 
+**[Play Joker’s Run](https://jokers-run.vercel.app)**
+
 ## Run
 
 ```sh
@@ -19,6 +21,12 @@ npx tsx scripts/simulate.ts  # deterministic pilot using the normal flight/weapo
 ```
 
 The production output is a static site: serve the contents of `dist/` over HTTP. No account, API key, backend, or paid asset is required.
+
+## Deployment
+
+[Randroids-Dojo/JokersRun](https://github.com/Randroids-Dojo/JokersRun) is connected to the `jokers-run` Vercel project in `randroid88s-projects` using the native GitHub integration. Pushing to `main` deploys production at **https://jokers-run.vercel.app**. Other branches receive preview deployments.
+
+`vercel.json` configures the Vite preset, `npm ci`, and `npm test && npm run build`, with `dist/` as the output directory. Vercel uses Node.js 24.x. A failed test or type check stops deployment. No repository secrets or application environment variables are required. The local `.vercel/` link and environment files are ignored by git.
 
 ## Fly
 
